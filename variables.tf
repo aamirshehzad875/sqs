@@ -4,8 +4,8 @@ variable "deploy_sqs" {
   default = {
     default = false,
     qa      = false,
-    staging = false,
+    staging = true,
     prod    = true,
-    test    = true
+    test    = false
   }
 }
