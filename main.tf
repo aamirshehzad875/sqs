@@ -21,12 +21,14 @@ module "sqs_messaging_notifications" {
     terraform = "true"
   }
 
+  count = lookup(var.deploy_sqs, terraform.workspace) ? 1 : 0
+
 }
 
-output "sqs_messaging_notifications_queue_url" {
-  value       = module.sqs_messaging_notifications.queue_url
-  description = "The URL of the SQS queue"
-}
+# output "sqs_messaging_notifications_queue_url" {
+#   value       = module.sqs_messaging_notifications.queue_url
+#   description = "The URL of the SQS queue"
+# }
 
 
 
